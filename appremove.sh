@@ -27,7 +27,7 @@ fi
 adb kill-server > /dev/null 2>&1
 adb shell exit > /dev/null 2>&1
 if [ $? -eq 0 ]; then
-  adb shell pm list package | sed -e "s/package://g" | grep -e 'docomo' -e 'ntt' -e 'auone' -e 'rakuten' -e 'kddi' -e 'softbank' | sed "s@^@adb shell pm uninstall --user 0 @g" > test.sh
+  adb shell pm list package | sed -e "s/package://g" | grep -e 'docomo' -e 'ntt' -e 'rakuten' -e 'softbank' | sed "s@^@adb shell pm uninstall --user 0 @g" > test.sh
   cat test.sh | sed -e "s@adb shell pm uninstall --user 0@@g"
   echo `cat test.sh | wc -l` "個のアプリが消去されます [Y/n]: "
   read ANS
