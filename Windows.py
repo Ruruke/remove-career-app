@@ -17,7 +17,7 @@ except:
 
 subprocess.check_call(r"adb shell pm list package > list.txt ",shell=True)
 try:
-    subprocess.check_call(r'findstr "rakuten kddi auone ntt softbank docomo" list.txt >> listout.txt ',shell=True)
+    subprocess.check_call(r'findstr "rakuten ntt softbank docomo" list.txt >> listout.txt ',shell=True)
 except:
     print("例外キャリアをフィルタリングしました")
 try:
